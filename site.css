@@ -1,3 +1,28 @@
-httml, body {
-  font-size: 16 px;
+body {
+  font-family: 'Oswald', Verdana, Arial, sans-serif;
+}
+
+#container {
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+h1, h2, h3, h4 {
+  background-color: #3C275A;
+  color: #fff;
+  border: 1px solid #D6A800;
+  padding: 10px
+}
+
+a {
+  text-decoration: #453674;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #3C275A;
 }
