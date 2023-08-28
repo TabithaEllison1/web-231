@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>WEB 231 Enterprise JavaScript I</title>
+
+        <!--meta tag-->
+        <meta name="description" content="Web 231 landing page">
+        <meta name="author" content="Tabitha Ellison">
+    </head>
+    <body>
+        
+        <link rel="stylesheet" type="text/css" href="../global.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+
+        <main id="container">
+            <!--Header-->
+            <h1>Exercise 2.2 - Hello JavaScript</h1>
+            <div>
+                <!--button onclick Alert-->
+                <button id="btnMyCourse" onclick="alert('WEB 231 – Enterprise JavaScript I.')">What course am I taking?</button>
+
+                <p id="txtMyWorld"></p>
+
+                <a class="return-home" href="../index.html">Return</a>
+
+            </div>
+        </main>
+        <script>
+            document.getElementById("txtMyWorld").innerHTML = "You are now in <youLastName’s> world!";
+            </script>
+        
+    </body>
+</html>
