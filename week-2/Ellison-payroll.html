@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>WEB 231 Enterprise JavaScript I</title>
+
+        <!--meta tag-->
+        <meta charset="utf-8">
+        <meta name="description" content="Web 231">
+        <meta name="author" content="Tabitha Ellison">
+        <!--Styling-->
+        <link rel="stylesheet" type="text/css" href="../site.css">
+        <link rel="stylesheet" type="text/css" href="Ellison-payroll.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div id="container">
+
+            <h1 id="payroll-header">Payroll System</h1>
+
+            <div id="record1">
+                <h3>Employee record 1</h3>
+
+                <ul>
+                    <li id="txtFirstNameSarah">Sarah</li>
+                    <li id="txtLastNameWilliams">Williams</li>
+                    <li id="txtaddressWilliams">111 Main Street</li>
+                    <li id="txthireDateWilliams">03/03/2013</li>
+                    <li id="txtpayRateWilliams">22.58</li>
+                </ul>
+            </div>
+            <!--Second employee record-->
+            <div id="record2">
+                <h3>Employee record 2</h3>
+
+                <ul>
+                    <li id="txtFirstNameLewis">Lewis</li>
+                    <li id="txtLastNameJohnson">Johnson</li>
+                    <li id="txtaddressJohnson">222 Mitchell Street</li>
+                    <li id="txthireDateJohnson">08/08/2008</li>
+                    <li id="txtpayRateJohnson">34.58</li>
+                </ul>
+            </div>
+            <!--Third employee record-->
+            <div id="record3">
+                <h3>Employee record 3</h3>
+
+                <ul>
+                    <li id="txtFirstNameNaomi">Naomi</li>
+                    <li id="txtLastNameKing">King</li>
+                    <li id="txtaddressKing">444 Bird Lane</li>
+                    <li id="txthireDateKing">03/07/2000</li>
+                    <li id="txtpayRateKing">38.77</li>
+                </ul>
+
+            </div>
+
+            <!--Return Home Button-->
+            <a class="return-home" href="../index.html">Return</a>
+
+        </div>
+        <!--JavaScript-->
+        <script>
+            let FirstNameSarah = "Sarah";
+            let LastNameWilliams = "Williams";
+            let addressWilliams = "111 Main Street";
+            let hireDateWilliams = new Date().toLocaleDateString("en-US");
+            let payRateWilliams = 22.58.toFixed(1)
+
+            let FirstNameLewis = "Lewis";
+            let LastNameJohnson = "Johnson";
+            let addressJohnson = "222 Mitchell Street";
+            let hireDateJohnson = new Date().toLocaleDateString("en-US");
+            let payRateJohnson = 34.58.toFixed(1)
+
+            let FirstNameNaomi = "Naomi";
+            let LastNameKing = "King";
+            let addressKing = "444 Bird Lane";
+            let hireDateKing = new Date().toLocaleDateString("en-US");
+            let payRateKing = 38.77.toFixed(1)
+            <!--Assigning Variables-->
+
+            document.getElementById("txtFirstNameSarah").innerHTML = FirstNameSarah;
+            document.getElementById("txtLastNameWilliams").innerHTML = LastNameWilliams;
+            document.getElementById("txtaddressWilliams").innerHTML = addressWilliams;
+            document.getElementById("txthireDateWilliams").innerHTML = hireDateWilliams;
+            document.getElementById("txtpayRateWilliams").innerHTML = payRateWilliams;
+
+            document.getElementById("txtFirstNameLewis").innerHTML = FirstNameLewis;
+            document.getElementById("txtLastNameJohnson").innerHTML = LastNameJohnson;
+            document.getElementById("txtaddressJohnson").innerHTML = addressJohnson;
+            document.getElementById("txthireDateJohnson").innerHTML = hireDateJohnson;
+            document.getElementById("txtpayRateJohnson").innerHTML = payRateJohnson;
+
+            document.getElementById("txtFirstNameNaomi").innerHTML = FirstNameNaomi;
+            document.getElementById("txtLastNameKing").innerHTML = LastNameKing;
+            document.getElementById("txtaddressKing").innerHTML = addressKing
+            document.getElementById("txthireDateKing").innerHTML = hireDateKing
+            document.getElementById("txtpayRateKing").innerHTML = payRateKing
+
+        </script>
+    </body>
+</html>
