@@ -2,15 +2,9 @@
     text-align: center;
     color: #4F3674;
 }
-
-#welcome {
+.app-header {
     text-align: center;
 }
-
-#form-example {
-    text-align: center;
-}
-
 #conversion-result {
     text-align: center;
     font-size: 28px;
