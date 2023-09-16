@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>WEB 231 Enterprise JavaScript I</title>
+
+        <!--meta tag-->
+        <meta charset="utf-8">
+        <meta name="description" content="Web 231">
+        <meta name="author" content="Tabitha Ellison">
+        
+    </head>
+    <body>
+         <!--Styling-->
+         <link rel="stylesheet" type="text/css" href="../global.css">
+         <link rel="stylesheet" type="text/css" href="Ellison-number-game.css">
+         <!-- Google fonts for Oswald -->
+         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet"> 
+         <main id="container">
+            <!--App Header-->
+            <h1 class="app-header">Welcome to the numbers game!</h1>
+
+            <div class="card">
+                <div class="card-title">Pick a number between 1 and 10</div>
+                <div class="card-content">
+                    <div class="form">
+                        <div class="form-field">
+                            <label for="txtMyNumber">Guess the number</label>
+                            <input type="text" class="input" id="txtMyNumber" name="txtMyNumber">
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <button class="btn btn-primary full-width">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+                <div class="card">
+                    <div class="card-title">Results</div>
+                    <div class="card-content" id="results"></div>
+                       <!--Results will go here-->
+                </div> 
+         </main>
+
+          <!--Return Home Button-->
+          <a class="return-home" href="../index.html">Return</a>
+        
+            <!--Javascript-->
+            <script>
+                const rnd = Math.floor((Math.random() * 10) + 1); //generate a random number between 1 and 10
+                let myNumber = document.getElementById("txtMyNumber").value;
+
+                if (myNumber > rnd) {
+                    myNumber = "The number is less than 10"
+                    document.getElementById("results").innerHTML = "The number is less than 10";
+                }
+                 else {
+                    if (myNumber < 10) {
+                        myNumber = "The number is greater than 10" 
+                        document.getElementById("results").innerHTML = "The number is greater than 10";
+                    }
+                    else {
+                        if (myNumber = rnd) {
+                            myNumber = "Congratulations! You picked the correct number!"
+                            document.getElementById("results").innerHTML = "Congratulations! You picked the correct number!"
+                            }
+
+                        }
+                    }
+                 
+                
+            
+            </script>
+    </body>
