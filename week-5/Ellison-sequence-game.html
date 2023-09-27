@@ -38,7 +38,12 @@
                 </div>
             </div>
 
-            <div class="card-title">Sequence Results</div>
+            <div class="card">
+                <div class="card-title">Sequence Results</div>
+                <div class="card-content" id="results">
+
+                </div>
+           </div>
 
              <!--Return Home Button-->
           <a class="return-home" href="../index.html">Return</a>
@@ -48,7 +53,7 @@
             <script>
 
                 document.getElementById("btnDisplaySequence").onclick =  function(){
-                 let choice = document.getElementById("sequence")   
+                 let choice = document.getElementById("sequence").value;   
                 
                  if (choice === "fibonacci") {
 
@@ -61,7 +66,7 @@
                         next = num1 + num2;
                         num1 = num2;
                         num2 = next;
-                    }while(num < 40); //value of all fibonacci numbers that are less than 40. 
+                    }while(num1 < 40); //value of all fibonacci numbers that are less than 40. 
 
                     fibonacciSequenceText = fibonacciSequenceText.slice(0,-2);
                     document.getElementById("results").innerHTML = fibonacciSequenceText;
