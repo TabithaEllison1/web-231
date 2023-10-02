@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>WEB 231 Enterprise JavaScript I</title>
+
+        <!--meta tag-->
+        <meta charset="utf-8">
+        <meta name="description" content="Web 231">
+        <meta name="author" content="Tabitha Ellison">
+        
+    </head>
+    <body>
+        <!--Styling-->
+        <link rel="stylesheet" type="text/css" href="../global.css">
+        <link rel="stylesheet" type="text/css" href="Ellison-in-n-out-books.css">
+        <!-- Google fonts for Oswald -->
+         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet"> 
+
+            <div id="container">
+                <h1 class="app-header">Welcome to In-N-Out-Books</h1>
+    
+                <div id="card-container">
+                    <div id="input" class="card">
+                        <div class="card-title">My Favorites</div>
+                        <div class="card-content">
+                            <div class="form">
+                                <div class="form-field">
+                                    <label for="favoriteList">Choose a listing: </label>
+                                    <select id="favoriteList" name="favoriteList" class="drop-down-menu">
+                                        <option value="select">--Select--</option>
+                                        <option value="books">Top 3 Favorite Books</option>
+                                        <option value="authors">Top 3 Favorite Authors</option>
+                                    </select> 
+                                </div>
+    
+                                <div class="form-field">
+                                    <button class="btn btn-primary full-width" id="btnDisplayListing" onclick="displayListing()">Display Listing</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+           
+                    <div id="results" class="card">
+                        <div class="card-title" id="listingResultsTitle"> </div>
+                        <div class="card-content" id="favorite-books">
+                            <table>
+                                <tr>
+                                    <th>ISBN</th>
+                                    <th>Title</th>
+                                    <th>Pages</th>
+                                </tr>
+                            <tr>
+                                <td id="txtLegendBornISBN"></td>
+                                <td id="txtLegendBornTitle"></td>
+                                <td id="txtLegendBornPages"></td>
+                            </tr>
+                            <tr>
+                                <td id="txtLotteryWinnerISBN"></td>
+                                <td id="txtLotteryWinnerTitle"></td>
+                                <td id="txtLotteryWinnerPages"></td>
+                            </tr>
+                            <tr>
+                                <td id="txtLandISBN"></td>
+                                <td id="txtLandTitle"></td>
+                                <td id="txtLandPages"></td>
+                            </tr>
+    
+                            </table>
+                        </div>
+                        <div class="card-content" id="favorite-authors">
+                            <table>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Genre</th>
+                                </tr>
+                        <tr>
+                            <td id="txtTracyDeonnName"></td>
+                            <td id="txtTracyDeonnGenre"></td>
+                        </tr>
+                        <tr>
+                            <td id="txtMaryHigginsClarkName"></td>
+                            <td id="txtMaryHigginsClarkGenre"></td>
+                        </tr>
+                        <tr>
+                            <td id="txtMildredTaylorName"></td>
+                            <td id="txtMildredTaylorGenre"></td>
+                        </tr>
+                            </table>
+                        </div>
+                    </div>
+    
+                    <a href="../index.html" class="return-home">Return</a>
+                </div>
+            </div>
+          <!--JavaScript-->
+          <script>
+            let books = document.getElementById("favorite-books");
+            let authors = document.getElementById("favorite-authors");
+
+            let legendborn = {
+                isbn: "9781398501874",
+                title: "LegendBorn",
+                pages: 512
+
+            }
+
+            let lotterywinner = {
+                isbn: "9780671867164", 
+                title: "LotteryWinner",
+                pages: "273"
+            }
+
+            let land = {
+                isbn: "978-0756915308", 
+                title: "Land",
+                pages: 375
+            }
+
+            let tracydeonn = {
+                name: "Tracy Deonn",
+                genre: "Fantasy Fiction",
+            }
+
+            let maryhigginsclark = {
+                name: "Mary Higgins Clark",
+                genre: "Mystery"
+            }
+
+            let mildredtaylor = {
+                name: "Mildred D. Taylor",
+                genre: "Historical Fiction"
+            }
+
+            document.getElementById("txtLegendBornISBN").innerHTML = legendborn.isbn;
+            document.getElementById("txtLegendBornTitle").innerHTML = legendborn.title;
+            document.getElementById("txtLegendBornPages").innerHTML = legendborn.pages;
+
+            document.getElementById("txtLotteryWinnerISBN").innerHTML = lotterywinner.isbn;
+            document.getElementById("txtLotteryWinnerTitle").innerHTML = lotterywinner.title;  
+            document.getElementById("txtLotteryWinnerPages").innerHTML = lotterywinner.pages; 
+
+            document.getElementById("txtLandISBN").innerHTML = land.isbn;
+            document.getElementById("txtLandTitle").innerHTML = land.title;  
+            document.getElementById("txtLandPages").innerHTML = land.pages;
+
+            document.getElementById("txtTracyDeonnName").innerHTML = tracydeonn.name;
+            document.getElementById("txtTracyDeonnGenre").innerHTML = tracydeonn.genre;
+
+            document.getElementById("txtMaryHigginsClarkName").innerHTML = maryhigginsclark.name;
+            document.getElementById("txtMaryHigginsClarkGenre").innerHTML = maryhigginsclark.genre;
+
+            document.getElementById("txtMildredTaylorName").innerHTML = mildredtaylor.name;
+            document.getElementById("txtMildredTaylorGenre").innerHTML = mildredtaylor.genre;
+
+            books.style.display = "none";
+            authors.style.display = "none";
+
+            function displayListing() {
+                resultsTitle = document.getElementById("listingResultsTitle");
+                
+                let choice = document.getElementById("favoriteList").value;                
+
+                if (choice === "books") {
+                    resultsTitle.innerHTML = "Top 3 Favorite Books";
+                    authors.style.display = "none";
+                    books.style.display = "block";
+                } else if (choice === "authors") {
+                    resultsTitle.innerHTML = "Top 3 Favorite Authors";
+                    books.style.display = "none";
+                    authors.style.display = "block";
+                } else {
+                    resultsTitle.style.display = "none";
+                    books.style.display = "none";
+                    authors.style.display = "none";
+                    window.alert("Invalid selection, please try again!");
+                }
+            }
+          </script>
+    </body>
+</html>
