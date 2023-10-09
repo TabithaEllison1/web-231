@@ -12,6 +12,8 @@
 
     <body>
 
+        <!--Styling-->
+        <link rel="stylesheet" type="text/css" href="../global.css">
         <link href="Ellison-alphabet-game.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
 
@@ -46,24 +48,24 @@
                 </div>
             </div>
         </div>
-        
+
         <a href="../index.html" class="return-home">Return</a>
 
         <script>
             const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
             let alphabetOutput = "";
             let results = document.getElementById("results");
-
+           
             for (let x in alphabet) {
                 alphabetOutput += alphabet[x] + ", ";
             }
-            //alphabetOutput.slice(0, -2)  //is not working
+            
 
             document.getElementById("alphabet").innerHTML = alphabetOutput;
             results.style.display = "none";
             
             function calcLetterPos() {
-                //let pos = parseInt(document.getElementById("txtPosition")) - 1;
+               
                 let pos = document.getElementById("txtPosition").value;
                 let letter = alphabet[pos - 1];
 
