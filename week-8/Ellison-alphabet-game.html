@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 Enterprise JavaScript I</title>
+
+        <!--meta tag-->
+        <meta charset="utf-8">
+        <meta name="description" content="Web 231">
+        <meta name="author" content="Tabitha Ellison">
+        
+    </head>
+
+    <body>
+
+        <link href="Ellison-alphabet-game.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+        <div id="container">
+            <h1 class="app-header">Welcome to the Alphabet Game!</h1>
+
+            <div id="card-container">
+                <div id="input" class="card">
+                    <div class="card-title">Alphabet Number Form</div>
+                    <div class="card-content">
+                        <div class="form">
+                            <div class="form-field">
+                                <label for="txtPosition">Alphabet Letter Position </label>
+                                <input type="text" id="txtPosition" name="txtPosition" class="input">
+                            </div>
+
+                            <div class="form-field">
+                                <button class="btn btn-primary full-width" id="btnFindLetter" onclick="calcLetterPos()">Find Letter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="letters" class="card">
+                    <div class="card-title">Letters in the Alphabet</div>
+                    <div class="card-content" id="alphabet"></div>
+                </div>
+
+                <div id="results" class="card">
+                    <div class="card-title">Results</div>
+                    <div class="card-content" id="alphabetResults"></div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="../index.html" class="return-home">Return</a>
+
+        <script>
+            const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+            let alphabetOutput = "";
+            let results = document.getElementById("results");
+
+            for (let x in alphabet) {
+                alphabetOutput += alphabet[x] + ", ";
+            }
+            //alphabetOutput.slice(0, -2)  //is not working
+
+            document.getElementById("alphabet").innerHTML = alphabetOutput;
+            results.style.display = "none";
+            
+            function calcLetterPos() {
+                //let pos = parseInt(document.getElementById("txtPosition")) - 1;
+                let pos = document.getElementById("txtPosition").value;
+                let letter = alphabet[pos - 1];
+
+                results.style.display = "block";
+
+                if (letter === undefined) {
+                    document.getElementById("alphabetResults").innerHTML = "There are not " + pos + " letters in the alphabet.";
+                } else {
+                    document.getElementById("alphabetResults").innerHTML = letter + " is at position " + (alphabet.indexOf(letter) + 1) + " in the alphabet.";
+                }
+            }
+        </script>
+    </body>
+</html>
