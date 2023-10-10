@@ -1,0 +1,39 @@
+html {
+  font-size: 14px;
+}
+
+header {
+  background-color: rgb(144, 19, 19);
+  color: black;
+  padding: 20px;
+  text-align: center;
+}
+
+p { font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+}
+
+a {
+  color: black;
+}
+
+body {
+  background-color: rgb(144, 19, 19);
+}
+
+image {
+  align-items: center;
+}
+
+figure {
+  align-items: center;
+}
+
+.type1 {
+  display: block;
+  margin: 0px auto;
+  border: 20px solid #fff;
+  border-radius: 10%;
+}

@@ -1,0 +1,66 @@
+html, body {
+    font-size: 15px;
+}
+
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.5em;
+}
+
+body {
+    background-color: peachpuff;
+}
+h1, h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    word-spacing: .4em;
+    margin: 1;
+    text-align: center;
+    padding-top: 16px;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 2.2em;
+    word-spacing: .4am;
+    margin: 1;
+    text-align: left;
+    padding-top: 14px;
+}
+
+figure {
+    align-items: center;
+    border: 10px solid #fff;
+    border-radius: 10%;
+}
+
+type1 {
+    display: block;
+    margin: 0px auto;
+    border: 20px solid #fff;
+    border-radius: 10%;
+}
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 33%;
+    padding: 7px;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+a {
+    color: black;
+  }
